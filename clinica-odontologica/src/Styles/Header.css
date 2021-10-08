@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
+
+.headerContainer {
+  width: 100vw;
+  height: 10vh;
+  background: #467a82;
+  display: flex;
+  color: white;
+  font-family: "Forum", cursive;
+}
+
+.tituloHeader {
+  width: 80%;
+  font-size: 36px;
+  align-self: center;
+  padding-left: 40px;
+}
+
+.usuarioContainer {
+  display: flex;
+  width: 20%;
+}
+
+.nombreUsuario {
+  width: 50%;
+  font-size: 25px;
+  align-self: center;
+}

@@ -13,6 +13,7 @@ public interface ITurnoRepository extends JpaRepository<Turno, Long> {
     @Query("SELECT t FROM Turno t WHERE t.paciente.dni = ?1")
     List<Turno> findTurnosByPacienteDni(Integer dni);
 
+
     @Query("SELECT t FROM Turno t WHERE t.odontologo.matricula  = ?1")
     List<Turno> findTurnosByOdontologoMatricula(String matricula);
 

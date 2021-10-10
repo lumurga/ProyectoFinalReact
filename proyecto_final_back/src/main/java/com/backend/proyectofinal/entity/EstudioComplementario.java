@@ -22,7 +22,7 @@ public class EstudioComplementario {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "odontologo_id", nullable = false)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private Odontologo odontologoSolicitante;
+    private Odontologo odontologo;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "paciente_id", nullable = false)
@@ -34,10 +34,10 @@ public class EstudioComplementario {
     public EstudioComplementario() {
     }
 
-    public EstudioComplementario(String nombre, LocalDate fecha, com.backend.proyectofinal.entity.Odontologo odontologoSolicitante, com.backend.proyectofinal.entity.Paciente paciente) {
+    public EstudioComplementario(String nombre, LocalDate fecha, com.backend.proyectofinal.entity.Odontologo odontologo, com.backend.proyectofinal.entity.Paciente paciente) {
         this.nombre = nombre;
         this.fecha = fecha;
-        this.odontologoSolicitante = odontologoSolicitante;
+        this.odontologo = odontologo;
         this.paciente = paciente;
     }
 
@@ -63,12 +63,12 @@ public class EstudioComplementario {
         this.fecha = fecha;
     }
 
-    public Odontologo getOdontologoSolicitante() {
-        return odontologoSolicitante;
+    public Odontologo getOdontologo() {
+        return odontologo;
     }
 
-    public void setOdontologoSolicitante(Odontologo odontologoSolicitante) {
-        this.odontologoSolicitante = odontologoSolicitante;
+    public void setOdontologoSolicitante(Odontologo odontolog) {
+        this.odontologo = odontologo;
     }
 
     public Paciente getPaciente() {
@@ -85,7 +85,7 @@ public class EstudioComplementario {
     public String toString() {
         return "Nombre: " +
                 "Paciente: " + paciente +
-                ", Odontólogo: " + odontologoSolicitante +
+                ", Odontólogo: " + odontologo +
                 ", Fecha: " + fecha +
                 '.';
     }

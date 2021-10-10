@@ -29,6 +29,8 @@ public class EstudioComplementarioController {
 
     private static final Logger logger = Logger.getLogger(String.valueOf(TurnoController.class));
 
+
+
     /* Constructor */
     @Autowired
     public EstudioComplementarioController(EstudioComplementarioService estudioComplementarioService, PacienteService pacienteService, OdontologoService odontologoService) {
@@ -70,7 +72,7 @@ public class EstudioComplementarioController {
     public ResponseEntity saveEstudio(@RequestBody EstudioComplementario estudioComplementario) {
         ResponseEntity response;
 
-        if(estudioComplementarioService.findById(estudioComplementario.getOdontologoSolicitante().getId()).isEmpty()) {
+        if(estudioComplementarioService.findById(estudioComplementario.getOdontologo().getId()).isEmpty()) {
             response = new ResponseEntity("Odontólogo no encontrado!", HttpStatus.NOT_FOUND);
         } else if (pacienteService.findById(estudioComplementario.getPaciente().getId()).isEmpty()){
             response = new ResponseEntity("Paciente no encontrado!", HttpStatus.NOT_FOUND);

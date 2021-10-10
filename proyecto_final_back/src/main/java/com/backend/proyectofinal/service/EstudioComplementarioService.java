@@ -5,11 +5,14 @@ import com.backend.proyectofinal.entity.EstudioComplementario;
 import com.backend.proyectofinal.repository.impl.IEstudioComplementarioRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
 public class EstudioComplementarioService implements IEntidadService<EstudioComplementario> {
 
 
@@ -41,7 +44,7 @@ public class EstudioComplementarioService implements IEntidadService<EstudioComp
         EstudioComplementario estudio = estudioComplementarioRepository.findById(estudioNew.getId()).get();
         estudio.setNombre(estudioNew.getNombre());
         estudio.setFecha(estudioNew.getFecha());
-        estudio.setOdontologoSolicitante(estudioNew.getOdontologoSolicitante());
+        estudio.setOdontologoSolicitante(estudioNew.getOdontologo());
         estudio.setPaciente(estudioNew.getPaciente());
         estudioComplementarioRepository.save(estudio);
         return estudio;

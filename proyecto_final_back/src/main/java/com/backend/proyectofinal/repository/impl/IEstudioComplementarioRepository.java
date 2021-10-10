@@ -16,5 +16,5 @@ public interface IEstudioComplementarioRepository extends JpaRepository<EstudioC
     List<EstudioComplementario> findEstudiosByOdontologoMatricula(String matricula);
 
     @Query("SELECT e FROM Estudio e WHERE e.fecha = ?1")
-    List<EstudioComplementario> findEstudioByFecha(LocalDate fecha);
+    List<EstudioComplementario> listEstudiosByFecha(LocalDate fecha);
 }

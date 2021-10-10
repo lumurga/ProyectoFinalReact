@@ -1,7 +1,7 @@
 package com.backend.proyectofinal.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -26,6 +26,10 @@ public class Odontologo {
     @JsonIgnore
     private Set<Turno> turnos = new HashSet<>();
 
+
+    @OneToMany(mappedBy = "odontologo", orphanRemoval = true)
+    @JsonIgnore
+    private Set<EstudioComplementario> estudios = new HashSet<>();
 
     /* Cosntructor */
     public Odontologo() {
@@ -75,6 +79,14 @@ public class Odontologo {
 
     public void setTurnos(Set<Turno> turnos) {
         this.turnos = turnos;
+    }
+
+    public Set<EstudioComplementario> getEstudios() {
+        return estudios;
+    }
+
+    public void setEstudios(Set<EstudioComplementario> estudios) {
+        this.estudios = estudios;
     }
 
     /* Métodos */

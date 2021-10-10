@@ -34,7 +34,9 @@ public class Paciente {
     @JsonIgnore
     private Set<Turno> turnos = new HashSet<>();
 
-
+    @OneToMany(mappedBy = "paciente", orphanRemoval = true)
+    @JsonIgnore
+    private Set<EstudioComplementario> estudios = new HashSet<>();
 
 
     /* Constructor */
@@ -101,6 +103,14 @@ public class Paciente {
     public Set<Turno> getTurnos() {return turnos;}
 
     public void setTurnos(Set<Turno> turnos) {this.turnos = turnos;}
+
+    public Set<EstudioComplementario> getEstudios() {
+        return estudios;
+    }
+
+    public void setEstudios(Set<EstudioComplementario> estudios) {
+        this.estudios = estudios;
+    }
 
     /*Métodos*/
     @Override

@@ -1,4 +1,4 @@
-# ProyectoFinalReact
+# Clínica Odontológica
 Proyecto colaborativo: Aplicación para gestión de pacientes, odntólogos y turnos en Clínica Odontológica.
 
 ## Equipo de desarrollo
